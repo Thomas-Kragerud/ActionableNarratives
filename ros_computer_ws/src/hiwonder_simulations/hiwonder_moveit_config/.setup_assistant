@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: hiwonder_description
+    relative_path: urdf/jetrover.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/hiwonder_tank.srdf
+  CONFIG:
+    author_name: hiwonder
+    author_email: hiwonder@gmail.com
+    generated_timestamp: 1672990848

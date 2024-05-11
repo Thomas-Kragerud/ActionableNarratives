@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- startup simulated world -->
+    <include file="$(find hiwonder_gazebo)/launch/empty_world.launch">
+        <arg name="paused"          value="true"/>
+        <arg name="use_sim_time"    value="true"/>
+        <arg name="gui"             value="true"/>
+        <arg name="headless"        value="false"/>
+        <arg name="debug"           value="false"/>
+    </include>
+
+    <arg name="odom_frame"  default="odom"/>
+    <arg name="base_frame"  default="base_footprint"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro '$(find hiwonder_description)/urdf/jetrover.gazebo.xacro' odom_frame:=$(arg odom_frame) base_frame:=$(arg base_frame)" />
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model hiwonder
+        -x 0 -y 0 -z 0 -Y 0 -J joint1 0 -J joint2 -0.83776 -J joint3 2.03156 -J joint4 1.19380 -J r_joint 0.5" respawn="false" output="screen" />
+    <include file="$(find hiwonder_moveit_config)/launch/ros_controllers.launch"/>
+</launch>

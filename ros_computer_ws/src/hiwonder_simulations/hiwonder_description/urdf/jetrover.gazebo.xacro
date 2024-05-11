@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="hiwonder" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find hiwonder_description)/urdf/jetrover.xacro"/>
+    <xacro:include filename="$(find hiwonder_description)/urdf/car.gazebo.xacro"/>
+    <xacro:include filename="$(find hiwonder_description)/urdf/arm.gazebo.xacro"/>
+    <xacro:include filename="$(find hiwonder_description)/urdf/gripper.gazebo.xacro"/>
+    <xacro:include filename="$(find hiwonder_description)/urdf/imu.gazebo.xacro"/>
+    <xacro:include filename="$(find hiwonder_description)/urdf/lidar.gazebo.xacro"/>
+    <xacro:include filename="$(find hiwonder_description)/urdf/depth_camera.gazebo.xacro"/>
+</robot>

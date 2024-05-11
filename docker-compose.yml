@@ -1,0 +1,14 @@
+version: '3'
+services:
+  ros_workspace:
+    build: .
+    environment:
+      - DISPLAY=${DISPLAY}
+    devices:
+      - /dev/snd:/dev/snd
+    volumes:
+      - ./:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    tty: true
+    stdin_open: true
+    network_mode: "host"
